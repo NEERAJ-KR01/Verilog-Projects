@@ -8,7 +8,7 @@ assign out= flattened_input[(sel*data)+:data]; //Magic Line
 module tb;
 parameter N=4; parameter W=8;
 reg[(N*W)-1:0]inputs;
-reg[($clog2(N)*W)-1:0]sel;
+reg[$clog2(N)-1:0]sel;
 wire[W-1:0]out;
 generic_mux dut(.flattened_input(inputs),.sel(sel),.out(out));
 initial begin
